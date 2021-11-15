@@ -44,6 +44,10 @@ body {
     height: auto;
     width: 70%;
   }
+
+  .move__name {
+    color: white;
+  }
   
   .outcome {
     color: var(--primary);

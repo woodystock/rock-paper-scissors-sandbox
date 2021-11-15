@@ -39,6 +39,21 @@ const getRandomMove = () => {
   const updateDOM = (moveOne, moveTwo, outcome) => {
     // TODO Implement this method to update the DOM
     // There are some images you can use in the images directory
+
+    const moves = [{name:"one", move:moveOne}, {name:"two", move:moveTwo}];
+
+    moves.forEach( player => {
+      const playerContainer = document.getElementById("player-" + player.name);
+      const playerMoveImg = playerContainer.querySelector("img");
+      const playerMoveName = playerContainer.querySelector("p");
+  
+      playerMoveImg.src = "images/" + player.move +  ".png";
+      playerMoveName.textContent = player.move.toUpperCase();
+    })
+
+    outcomeDisplay = document.getElementById("outcome-display");
+    outcomeDisplay.textContent = outcome;
+    
   };
   
   const playButton = document.getElementById("play-btn");

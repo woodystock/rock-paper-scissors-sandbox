@@ -51,9 +51,16 @@ const getRandomMove = () => {
       playerMoveName.textContent = player.move.toUpperCase();
     })
 
-    outcomeDisplay = document.getElementById("outcome-display");
-    outcomeDisplay.textContent = outcome;
+    if(! document.getElementById("outcome-display")) {
+      outcomeDisplay = document.createElement("h2");
+      outcomeDisplay.id = "outcome-display";
+      outcomeDisplay.className = "outcome-display";
+
+      document.body.append(outcomeDisplay);
+    }
     
+    outcomeDisplay.textContent = outcome;
+
   };
   
   const playButton = document.getElementById("play-btn");
